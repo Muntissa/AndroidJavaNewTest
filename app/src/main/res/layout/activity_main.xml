@@ -5,56 +5,88 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="25sp"
-    tools:context=".MainActivity">
+    tools:context=".Activities.MainActivity">
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/form_secondName"
-        android:hint="@string/form_secondName"
-        android:layout_width="350sp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_height="wrap_content"/>
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/form_firstName"
-        android:hint="@string/form_firstName"
-        android:layout_width="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/form_secondName"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_height="wrap_content"/>
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/form_lastName"
-        android:hint="@string/form_lastName"
-        android:layout_width="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/form_firstName"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_height="wrap_content"/>
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/form_email"
-        android:hint="@string/form_email"
-        android:layout_width="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/form_lastName"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_height="wrap_content"/>
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/form_phone"
-        android:hint="@string/form_phone"
-        android:layout_width="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/form_email"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_height="wrap_content"/>
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/buttonSave"
-        android:text="@string/button_save"
+    <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="128dp"
-        android:layout_marginTop="52dp"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:text="Создание нового клиента"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/clientForm_SecondName"
+        android:layout_width="340sp"
+        android:layout_height="52dp"
+        android:layout_marginTop="50sp"
+        android:layout_marginLeft="10sp"
+        android:layout_marginEnd="10sp"
+        android:hint="@string/clientForm_SecondName"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/form_phone" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/clientForm_FirstName"
+        android:layout_width="340sp"
+        android:layout_height="52sp"
+        android:layout_marginTop="10sp"
+        android:layout_marginLeft="10sp"
+        android:layout_marginEnd="10sp"
+        android:hint="@string/clientForm_FirstName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/clientForm_SecondName" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/clientForm_LastName"
+        android:layout_width="340sp"
+        android:layout_height="52sp"
+        android:layout_marginTop="10sp"
+        android:layout_marginLeft="10sp"
+        android:layout_marginEnd="10sp"
+        android:hint="@string/clientForm_LastName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/clientForm_FirstName" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/clientForm_Email"
+        android:layout_width="340sp"
+        android:layout_height="52sp"
+        android:layout_marginTop="10sp"
+        android:layout_marginLeft="10sp"
+        android:layout_marginEnd="10sp"
+        android:hint="@string/clientForm_Email"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/clientForm_LastName" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/clientForm_Phone"
+        android:layout_width="340sp"
+        android:layout_height="52sp"
+        android:layout_marginTop="10sp"
+        android:layout_marginLeft="10sp"
+        android:layout_marginEnd="10sp"
+        android:hint="@string/clientForm_Phone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/clientForm_Email" />
+
+    <Button
+        android:id="@+id/clientForm_AddClientBTN"
+        android:layout_width="208dp"
+        android:layout_height="62dp"
+        android:textSize="25sp"
+        android:text="Добавить"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

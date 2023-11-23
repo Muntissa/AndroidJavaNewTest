@@ -1,9 +1,8 @@
 <resources>
     <string name="app_name">AndroidJava</string>
-    <string name="form_secondName" />
-    <string name="form_firstName" />
-    <string name="form_lastName" />
-    <string name="form_email" />
-    <string name="form_phone" />
-    <string name="button_save">Сохранить</string>
+    <string name="clientForm_SecondName">Фамилия</string>
+    <string name="clientForm_FirstName">Имя</string>
+    <string name="clientForm_LastName">Отчество</string>
+    <string name="clientForm_Email">Электронная почта</string>
+    <string name="clientForm_Phone">Телефон</string>
 </resources>

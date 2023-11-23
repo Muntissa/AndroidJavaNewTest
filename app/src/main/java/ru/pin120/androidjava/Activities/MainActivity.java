@@ -1,20 +1,14 @@
-package ru.pin120.androidjava;
+package ru.pin120.androidjava.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.os.Bundle;
-import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.gson.Gson;
 
-import java.io.IOException;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -23,6 +17,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import ru.pin120.androidjava.Api.ClientsApi;
 import ru.pin120.androidjava.Entities.Clients;
+import ru.pin120.androidjava.R;
 import ru.pin120.androidjava.REST.RESTHelper;
 
 public class MainActivity extends AppCompatActivity {
@@ -36,13 +31,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initializeComponents() {
-        TextInputEditText secondNameET = findViewById(R.id.form_secondName);
-        TextInputEditText firstNameET = findViewById(R.id.form_firstName);
-        TextInputEditText lastNameET = findViewById(R.id.form_lastName);
-        TextInputEditText emailET = findViewById(R.id.form_email);
-        TextInputEditText phoneET = findViewById(R.id.form_phone);
+        TextInputEditText secondNameET = findViewById(R.id.clientForm_SecondName);
+        TextInputEditText firstNameET = findViewById(R.id.clientForm_FirstName);
+        TextInputEditText lastNameET = findViewById(R.id.clientForm_LastName);
+        TextInputEditText emailET = findViewById(R.id.clientForm_Email);
+        TextInputEditText phoneET = findViewById(R.id.clientForm_Phone);
 
-        MaterialButton saveBTN = findViewById(R.id.buttonSave);
+        Button saveBTN = findViewById(R.id.clientForm_AddClientBTN);
 
         RESTHelper restHelper = new RESTHelper();
         ClientsApi clientsApi = restHelper.getRetrofit().create(ClientsApi.class);
