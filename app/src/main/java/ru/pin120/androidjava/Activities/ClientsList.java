@@ -55,4 +55,16 @@ public class ClientsList extends AppCompatActivity {
         ClientsAdapter clientsAdapter = new ClientsAdapter(clientsList);
         recyclerView.setAdapter(clientsAdapter);
     }
+
+    /*    private void loadClients(){
+        List<Clients> list = new ArrayList<>();
+
+        Clients client = new Clients(0, "Name", "Second", "Last", "em", "phone");
+        list.add(client);
+        list.add(client);
+        list.add(client);
+
+        ClientsAdapter clientsAdapter = new ClientsAdapter(list);
+        recyclerView.setAdapter(clientsAdapter);
+    }*/
 }

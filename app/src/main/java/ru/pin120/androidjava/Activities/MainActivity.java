@@ -1,9 +1,14 @@
 package ru.pin120.androidjava.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
@@ -39,6 +44,11 @@ public class MainActivity extends AppCompatActivity {
 
         Button saveBTN = findViewById(R.id.clientForm_AddClientBTN);
 
+        Button to_list_btn = findViewById(R.id.to_list_btn);
+        @SuppressLint("WrongViewCast") ImageButton to_list_btn_2 = findViewById(R.id.to_list_btn_2);
+        ImageButton navBar_btn = findViewById(R.id.navBar_btn);
+        CardView navBar = findViewById(R.id.navBar);
+
         RESTHelper restHelper = new RESTHelper();
         ClientsApi clientsApi = restHelper.getRetrofit().create(ClientsApi.class);
 
@@ -69,6 +79,32 @@ public class MainActivity extends AppCompatActivity {
                             Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, "Error occurred", t);
                         }
                     });
+        });
+
+        to_list_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent listActivity = new Intent(MainActivity.this, ClientsList.class);
+                startActivity(listActivity);
+            }
+        });
+
+        to_list_btn_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent listActivity = new Intent(MainActivity.this, ClientsList.class);
+                startActivity(listActivity);
+            }
+        });
+
+        navBar_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(navBar.getVisibility() == View.GONE)
+                    navBar.setVisibility(View.VISIBLE);
+                else
+                    navBar.setVisibility(View.GONE);
+            }
         });
     }
 }
